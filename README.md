@@ -162,5 +162,48 @@ sudo systemctl start sddm.service
 
 Install Applications:
 ```bash
-sudo pacman -S dmenu kitty rxvt-unicode
+sudo pacman -S
+dmenu  # Application menu
+kitty  # terminal
+feh    # Wallpaper
+```
+
+Change fey wallpaper
+```bash
+feh --bg-fill ~/wallpapers/image.jpg
+```
+
+Install zsh
+```bash
+sudo pacman -S zsh
+```
+
+Install zplug
+```bash
+curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+```
+
+zshrc:
+```bash
+if [[ ! -d ~/.zplug ]];then
+  git clone https://github.com/zplug/zplug ~/.zplug
+fi
+source ~/.zplug/init.zsh
+zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/sudo", from:oh-my-zsh
+zplug "plugins/command-not-found", from:oh-my-zsh
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-history-substring-search"
+zplug "zsh-users/zsh-completions"
+zplug "themes/robbyrussell", from:oh-my-zsh, as:theme
+zplug "wfxr/forgit"
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+#zplug load --verbose
+zplug load
 ```
