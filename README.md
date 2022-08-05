@@ -201,6 +201,7 @@ Install with yay
 ```bash
 yay -S google-chrome # Browser
 yay -S spotify       # Music
+yay -S atom          # Text editor
 ```
 
 ## Activate SDDM
@@ -260,4 +261,6 @@ zplug load
 
 ## TODO
 
+ - make Cheatsheet
 https://www.reddit.com/r/bspwm/comments/fvehlt/sxhkd_check_sheet/
+ - Automate setup by scripts
