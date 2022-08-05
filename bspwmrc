@@ -12,4 +12,7 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a Chromium desktop='^2'
+bspc rule -a Chrome desktop='^2'
+
+# Set wallpaper
+feh --bg-fill ~/wallpapers/lucas-segers-6mNKUrwMwFk-unsplash.jpg

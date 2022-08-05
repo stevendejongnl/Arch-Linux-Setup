@@ -2,50 +2,49 @@ https://wiki.archlinux.org/title/installation_guide
 https://www.youtube.com/watch?v=a8IJ-keZcq0&ab_channel=BrentWestbrook
 https://www.debugpoint.com/gnome-arch-linux-install/
 
-List disks
-```bash
-fdisk -l
-```
+# Installation
 
-Make changes in specific disk
+## Disk partitions
+
+Make changes in specific disk:
 ```bash
 fdisk /dev/vda
 ```
 
-new partition boot:
-```fdisk
-n
-+256M
+Fdisk Commands:
+```bash
+n  # New partition
+t  # Type
+w  # Write
 ```
 
+New partition boot:
+```bash
++256M  # partition size
+```
 
 new partition swap:
-```fdisk
-n
-+2G
-t
-82
+```bash
++2G  # partition size
+82   # type
 ```
 
 new partition root:
-```fdisk
-n
-+25G
+```bash
++25G  # partition size
 ```
 
 new partition home:
-```fdisk
-n
-p
+```bash
+p  # partition primary
 ```
 
 Write partitions:
-```fdisk
+```bash
 w
 ```
 
-
-format partitions:
+Format the partitions to the right format:
 ```bash
 mkfs.ext4 /dev/vda1
 mkfs.ext4 /dev/vda3
@@ -54,7 +53,7 @@ mkswap /dev/vda2
 ```
 
 
-Mount partitions:
+## Mount partitions
 ```bash
 mount /dev/vda4 /mnt
 
@@ -70,6 +69,13 @@ Set swap:
 swapon /dev/vda2
 ```
 
+Set fstab:
+```bash
+genfstab -U /mnt >> /mnt/etc/fstab
+```
+
+
+## Install packages
 Install archlinux-keyring:
 ```bash
 sudo pacman -Sy archlinux-keyring
@@ -80,12 +86,10 @@ Install packages to /mnt:
 pacstrap /mnt base linux linux-firmware networkmanager dhcpcd git vim base-devel grub xorg xorg-xinit sddm bspwm sxhkd
 ```
 
-Set fstab:
-```bash
-genfstab -U /mnt >> /mnt/etc/fstab
-```
 
-Log into /mnt partition:
+## Configure
+
+Change root to /mnt:
 ```bash
 arch-chroot /mnt
 ```
@@ -147,6 +151,8 @@ exit
 reboot
 ```
 
+
+## Continue configuration
 NetworkManager
 ```bash
 sudo systemctl enable NetworkManager.service
@@ -172,31 +178,52 @@ echo '#!/bin/sh
 exec /usr/bin/Xorg -nolisten tcp "$@" vt$XDG_VTNR' > ~/.xserverrc
 ```
 
-Install Applications:
+
+## Install and set applications/packages
 ```bash
 sudo pacman -S
 dmenu    # Application menu
 kitty    # terminal
 feh      # Wallpaper
-chromium # Browser
 gimp     # Image editor
 nautilus # File manager
 ```
 
-sddm
+Install yay:
+```bash
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+yay -S pamac-aur
+```
+
+Install with yay
+```bash
+yay -S google-chrome # Browser
+yay -S spotify       # Music
+```
+
+## Activate SDDM
 ```bash
 sudo systemctl enable sddm.service
 sudo systemctl start sddm.service
 ```
 
-Change fey wallpaper
+
+## Environment configuration
+Copy wallpaper:
 ```bash
-feh --bg-fill ~/wallpapers/image.jpg
+cp ~/arch-linux-setup/wallpapers/lucas-segers-6mNKUrwMwFk-unsplash.jpg ~/wallpapers
 ```
 
 Install zsh
 ```bash
 sudo pacman -S zsh
+```
+
+Install oh-my-zsh
+```bash
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 Install zplug
@@ -228,3 +255,9 @@ fi
 #zplug load --verbose
 zplug load
 ```
+
+
+
+## TODO
+
+https://www.reddit.com/r/bspwm/comments/fvehlt/sxhkd_check_sheet/
