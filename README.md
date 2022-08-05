@@ -15,8 +15,6 @@ fdisk /dev/vda
 new partition boot:
 ```fdisk
 n
-p
-1
 +256M
 ```
 
@@ -24,8 +22,6 @@ p
 new partition swap:
 ```fdisk
 n
-p
-2
 +2G
 t
 82
@@ -34,8 +30,6 @@ t
 new partition root:
 ```fdisk
 n
-p
-3
 +25G
 ```
 
@@ -43,7 +37,6 @@ new partition home:
 ```fdisk
 n
 p
-4
 ```
 
 Write partitions:
@@ -84,12 +77,11 @@ sudo pacman -Sy archlinux-keyring
 
 Install packages to /mnt:
 ```bash
-pacstrap /mnt base linux linux-firmware networkmanager vim base-devel
+pacstrap /mnt base linux linux-firmware networkmanager dhcpcd git vim base-devel grub xorg xorg-xinit sddm bspwm sxhkd
 ```
 
 Set fstab:
 ```bash
-genfstab -U /mnt
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
@@ -98,16 +90,34 @@ Log into /mnt partition:
 arch-chroot /mnt
 ```
 
-Setup grub
+Set locale:
 ```bash
-sudo pacman -Sy grub
-grub-install /dev/vda
-grub-mkconfig -o /boot/grub/grub.cfg
+vim /etc/locale.gen
+# uncomment en_US.UTF-8 UTF-8
+
+locale-gen
+
+echo "LANG=en_US.UTF-8" >> /etc/locale.conf
+
+ln –s /usr/share/zoneinfo/<Region>/<City> /etc/localtime
+
+hwclock --systohc --utc
 ```
 
-Reboot
+Set hostname:
 ```bash
-reboot
+echo "<hostname>" >> /etc/hostname
+```
+
+Enable dhcpcd:
+```bash
+systemctl enable dhcpcd
+```
+
+Setup grub
+```bash
+grub-install /dev/vda
+grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 Create user
@@ -129,22 +139,30 @@ sudo su - <username>
 sudo whoami
 ```
 
+Remove iso
+
+Reboot
+```bash
+exit
+reboot
+```
+
 NetworkManager
 ```bash
 sudo systemctl enable NetworkManager.service
 sudo systemctl start NetworkManager.service
 ```
 
-install xorg, sddm, bspwm and sxhkd
+Set bspwm and sxhkd config:
 ```bash
-sudo pacman -Sy xorg xorg-xinit sddm bspwm sxhkd
-install -Dm755 /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/bspwmrc
-install -Dm644 /usr/share/doc/bspwm/examples/sxhkdrc ~/.config/sxhkd/sxhkdrc
+git clone git@github.com:stevendejongnl/arch-linux-setup.git
+install -Dm755 arch-linux-setup/bspwmrc ~/.config/bspwm/bspwmrc
+install -Dm644 arch-linux-setup/sxhkdrc ~/.config/sxhkd/sxhkdrc
 ```
 
 xinitrc
 ```bash
-cp /etc/X11/xinit/xinitrc ~/.xinitrc
+echo "exec bspwm" >> ~/.xinitrc
 ```
 
 xserverrc
@@ -154,18 +172,21 @@ echo '#!/bin/sh
 exec /usr/bin/Xorg -nolisten tcp "$@" vt$XDG_VTNR' > ~/.xserverrc
 ```
 
+Install Applications:
+```bash
+sudo pacman -S
+dmenu    # Application menu
+kitty    # terminal
+feh      # Wallpaper
+chromium # Browser
+gimp     # Image editor
+nautilus # File manager
+```
+
 sddm
 ```bash
 sudo systemctl enable sddm.service
 sudo systemctl start sddm.service
-```
-
-Install Applications:
-```bash
-sudo pacman -S
-dmenu  # Application menu
-kitty  # terminal
-feh    # Wallpaper
 ```
 
 Change fey wallpaper
