@@ -1,18 +1,18 @@
 #!/bin/bash
 
-DISPLAYPORT = 'DP-1'
-HDMIONE = 'HDMI-1'
-HDMITWO = 'HDMI-1-1'
+DISPLAYPORT='DP-1'
+HDMIONE='HDMI-1'
+HDMITWO='HDMI-1-1'
 if [[ $(xrandr -q | grep 'DP-2 connected') ]]; then
-	DISPLAYPORT = 'DP-2'
+	DISPLAYPORT='DP-2'
 fi
 
 if [[ $(xrandr -q | grep 'HDMI-2 connected') ]]; then
-	HDMIONE = 'HDMI-2'
+	HDMIONE='HDMI-2'
 fi
 
 if [[ $(xrandr -q | grep 'HDMI-1-2 connected') ]]; then
-	HDMITWO = 'HDMI-1-2'
+	HDMITWO='HDMI-1-2'
 fi
 
 ## Set gpu and monitor
@@ -24,6 +24,9 @@ xrandr --newmode "2048x864_60.00"  145.25  2048 2168 2376 2704  864 867 877 897 
 xrandr --addmode $HDMITWO 2048x864_60.00
 
 autorandr --load triple
+
+xrandr --output $HDMIONE --mode 1920x1080 --rate 144
+xrandr --output $DISPLAYPORT --mode 1920x1080 --rate 144
 
 sleep 3
 
