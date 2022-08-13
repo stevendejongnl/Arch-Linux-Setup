@@ -2,6 +2,14 @@ https://wiki.archlinux.org/title/installation_guide
 https://www.youtube.com/watch?v=a8IJ-keZcq0&ab_channel=BrentWestbrook
 https://www.debugpoint.com/gnome-arch-linux-install/
 
+# Java Application issues
+https://www.reddit.com/r/bspwm/comments/ozcd9c/pycharm_screen_without_content/
+
+Add Java non reparanting in `/etc/profile.d/jre.sh`
+```bash
+export _JAVA_AWT_WM_NONREPARENTING=1
+``` 
+
 # Installation
 
 ## Disk partitions
