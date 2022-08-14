@@ -12,6 +12,7 @@ pgrep -x picom > /dev/null || picom &
 
 source $BSPWM_CONFIG/monitor-setup.sh
 source $POLYBAR_CONFIG/launch.sh
+source $BSPWM_CONFIG/rules.sh
 source $BSPWM_CONFIG/styling.sh
 
 # Autostart
