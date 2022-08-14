@@ -14,7 +14,9 @@ source $BSPWM_CONFIG/monitor-setup.sh
 source $POLYBAR_CONFIG/launch.sh
 source $BSPWM_CONFIG/styling.sh
 
+# Autostart
+dex -a
+
 # Set wallpaper
 RANDOM_WALLPAPER=$(find $WALLPAPERS/* -xtype f | shuf -n 1) &&
 	feh --bg-fill "$RANDOM_WALLPAPER"
-
