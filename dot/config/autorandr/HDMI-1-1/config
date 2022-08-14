@@ -3,24 +3,33 @@ off
 output DVI-I-1-1
 off
 output HDMI-1-1
-off
-output DP-1
-crtc 0
-mode 1920x1080
+crtc 4
+mode 2048x864_60.00
 pos 0x0
-primary
-rate 60.00
-x-prop-max_bpc 8
+rate 59.88
+x-prop-audio auto
 x-prop-non_desktop 0
 x-prop-scaling_mode None
 x-prop-underscan off
 x-prop-underscan_hborder 0
 x-prop-underscan_vborder 0
 output HDMI-2
+crtc 0
+mode 1920x1080
+pos 0x864
+primary
+rate 144.00
+x-prop-max_bpc 8
+x-prop-non_desktop 0
+x-prop-scaling_mode None
+x-prop-underscan off
+x-prop-underscan_hborder 0
+x-prop-underscan_vborder 0
+output DP-1
 crtc 1
 mode 1920x1080
-pos 1920x0
-rate 60.00
+pos 1920x864
+rate 144.00
 x-prop-max_bpc 8
 x-prop-non_desktop 0
 x-prop-scaling_mode None

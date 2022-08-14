@@ -18,7 +18,7 @@ crtc 0
 mode 1920x1080
 pos 0x864
 primary
-rate 60.00
+rate 144.00
 x-prop-max_bpc 8
 x-prop-non_desktop 0
 x-prop-scaling_mode None
@@ -29,7 +29,7 @@ output DP-1
 crtc 1
 mode 1920x1080
 pos 1920x864
-rate 60.00
+rate 144.00
 x-prop-max_bpc 8
 x-prop-non_desktop 0
 x-prop-scaling_mode None
