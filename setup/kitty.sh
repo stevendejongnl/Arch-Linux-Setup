@@ -5,7 +5,7 @@ install () {
     rsync -av --progress "$DIR/dotconfig/kitty/" "$HOME/.config/kitty/"
 }
 
-if [ ! -z "$INSTALL_ALL" ]; then
+if [ -n "$INSTALL_ALL" ]; then
     install
 else
     read -r -p "Install kitty config [y/N] " kitty_config

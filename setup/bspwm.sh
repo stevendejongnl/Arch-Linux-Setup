@@ -9,7 +9,7 @@ install () {
     chmod +x "$HOME/.config/bspwm/styling.sh"
 }
 
-if [ ! -z "$INSTALL_ALL" ]; then
+if [ -n "$INSTALL_ALL" ]; then
     install
 else
     read -r -p "Install bswpm config [y/N] " bspwm_config

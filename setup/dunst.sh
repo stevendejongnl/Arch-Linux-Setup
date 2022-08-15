@@ -5,7 +5,7 @@ install () {
     rsync -av --progress "$DIR/dotconfig/dunst/" "$HOME/.config/dunst/"
 }
 
-if [ ! -z "$INSTALL_ALL" ]; then
+if [ -n "$INSTALL_ALL" ]; then
     install
 else
     read -r -p "Install dunst config [y/N] " dunst_config

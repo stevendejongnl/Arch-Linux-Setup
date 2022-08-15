@@ -5,7 +5,7 @@ install () {
     rsync -av --progress "$DIR/dotconfig/sxhkd/" "$HOME/.config/sxhkd/"
 }
 
-if [ ! -z "$INSTALL_ALL" ]; then
+if [ -n "$INSTALL_ALL" ]; then
     install
 else
     read -r -p "Install sxhkd config [y/N] " sxhkd_config

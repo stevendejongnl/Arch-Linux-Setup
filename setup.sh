@@ -3,20 +3,40 @@
 DIR="$(dirname "${BASH_SOURCE[0]}")"
 DIR="$(realpath "${DIR}")"
 
-while getopts ":a:" opt; do
-    case $opt in
-        a) INSTALL_ALL="$OPTARG"
-        ;;
-        \?) echo "Invalid option -$OPTARG" >&2
-        exit 1
-        ;;
-    esac
+POSITIONAL_ARGS=()
 
-#   case $OPTARG in
-#     -*) echo "Option $opt needs a valid argument"
-#     exit 1
-#     ;;
-#   esac
+help () {
+    echo "HELLP!"
+}
+
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        -a|--all)
+            INSTALL_ALL="$1"
+            shift # past argument
+            ;;
+        # -s|--searchpath)
+        #   SEARCHPATH="$2"
+        #   shift # past argument
+        #   shift # past value
+        #   ;;
+        # --default)
+        #   DEFAULT=YES
+        #   shift # past argument
+        #   ;;
+        -h|--help)
+            help
+            exit 1
+            ;;
+        -*|--*)
+            echo "Unknown option $1"
+            exit 1
+            ;;
+        *)
+            POSITIONAL_ARGS+=("$1") # save positional arg
+            shift # past argument
+            ;;
+    esac
 done
 
 source "$DIR/setup/rsync.sh"
