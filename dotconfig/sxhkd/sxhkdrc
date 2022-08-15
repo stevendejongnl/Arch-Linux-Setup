@@ -35,40 +35,17 @@ super + alt + @space
 # program launcher
 super + @space
     rofi -show drun
-    
-# power menu
-super + shift + @Escape
-    rofi -show p -modi p:rofi-power-menu \
-	 -theme Paper \
-	 -font "JetBrains Mono NF 16" \
-	 -width 20 \
-	 -lines 6
-
-
-#############################
-#           Tools           #
-#############################
-
-# Screen key
-super + k ; s
-    pgrep -x screenkey >/dev/null && pkill screenkey || screenkey
 
 
 #############################
 #       Audio Control       #
 #############################
 
-# Lower volume
-XF86AudioLowerVolume 
-    changevolume down
+XF86Audio{Raise,Lower}Volume
+    $HOME/.config/sxhkd/changevolume {raise,lower}
 
-# Raise volume
-XF86AudioRaiseVolume
-    changevolume up
-
-# Mute audio
 XF86AudioMute
-    changevolume mute
+    $HOME/.config/sxhkd/changevolume mute
 
 
 #############################
