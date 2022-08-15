@@ -1,121 +1,116 @@
 /** Basic config file **/
 
 configuration {
-	font: "Iosevka Nerd Font 10";
     show-icons: true;
     icon-theme: "Papirus";
-    display-drun: 					"Applications";
-    display-dmenu: 					"joe";
-    drun-display-format:            "{name}";
-    display-window:                 "﩯 ";
-    display-combi:                  "  ";
-    disable-history:                false;
-	sidebar-mode: 					false;
+    disable-history: false;
+	sidebar-mode: false;
 }
 
 @import "colors.rasi"
 
-window {
-    transparency:                   "real";
-    background-color:               @bg;
-    text-color:                     @fg;
-	border:							0px;
-	border-color:					@ac;
-    border-radius:                  0px;
-	width:							35%;
-    location:                       center;
-    x-offset:                       0;
-    y-offset:                       0;
-}
-
-prompt {
-    enabled: 						true;
-	padding: 						1% 0.75% 1% 0.75%;
-	background-color: 				@ac;
-	text-color: 					@fg;
-	font:							"Iosevka Nerd Font 12";
-}
-
-textbox-prompt-colon {
-	padding: 						1% 0% 1% 0%;
-	background-color: 				@se;
-	text-color: 					@fg;
-	expand: false;
-	str: " :: ";
-}
-
-entry {
-    background-color:               @al;
-    text-color:                     @fg;
-    placeholder-color:              @fg;
-    expand:                         true;
-    horizontal-align:               0;
-    placeholder:                    "Search...";
-	padding: 						1.15% 0.5% 1% 0.5%;
-    blink:                          true;
-}
-
-inputbar {
-	children: 						[ prompt, entry ];
-    background-color:               @se;
-    text-color:                     @fg;
-    expand:                         false;
-	border:							0% 0% 0% 0%;
-    border-radius:                  0px;
-	border-color:					@ac;
-}
-
-listview {
-    background-color:               @al;
-    padding:                        0px;
-    columns:                        1;
-    lines:                          7;
-    spacing:                       	1%;
-    cycle:                          false;
-    dynamic:                        true;
-    layout:                         vertical;
-}
-
-mainbox {
-    background-color:               @al;
-	border:							0% 0% 0% 0%;
-    border-radius:                  0% 0% 0% 0%;
-	border-color:					@ac;
-    children:                       [ inputbar, listview ];
-    spacing:                       	2%;
-    padding:                        4% 2% 4% 2%;
-}
-
 element {
-    background-color:               @se;
-    text-color:                     @fg;
-    orientation:                    horizontal;
-    border-radius:                  0%;
-    padding:                        1% 0.5% 1% 0.75%;
+    padding: 0px 0px 0px 7px;
+    spacing: 5px;
+    border:  0;
+    cursor:  pointer;
 }
-
-element-icon {
-    background-color: 				inherit;
-    text-color:       				inherit;
-    horizontal-align:               0.5;
-    vertical-align:                 0.5;
-    size:                           24px;
-    border:                         0px;
+element normal.normal {
+    background-color: var(normal-background);
+    text-color: var(normal-foreground);
 }
-
+element normal.urgent {
+    background-color: var(urgent-background);
+    text-color: var(urgent-foreground);
+}
+element normal.active {
+    background-color: var(active-background);
+    text-color: var(active-foreground);
+}
+element selected.normal {
+    background-color: var(selected-normal-background);
+    text-color: var(selected-normal-foreground);
+}
+element selected.urgent {
+    background-color: var(selected-urgent-background);
+    text-color: var(selected-urgent-foreground);
+}
+element selected.active {
+    background-color: var(selected-active-background);
+    text-color: var(selected-active-foreground);
+}
+element alternate.normal {
+    background-color: var(alternate-normal-background);
+    text-color: var(alternate-normal-foreground);
+}
+element alternate.urgent {
+    background-color: var(alternate-urgent-background);
+    text-color: var(alternate-urgent-foreground);
+}
+element alternate.active {
+    background-color: var(alternate-active-background);
+    text-color: var(alternate-active-foreground);
+}
 element-text {
-    background-color: 				@al;
-    text-color:       				inherit;
-    expand:                         true;
-    horizontal-align:               0;
-    vertical-align:                 0.5;
-    margin:                         0% 0.25% 0% 0.25%;
+    background-color: rgba(0, 0, 0, 0%);
+    text-color: inherit;
+    highlight: inherit;
+    cursor: inherit;
 }
-
-element selected {
-    background-color:               @se;
-    text-color:                     @ac;
-	border:							0% 0% 0% 0.3%;
-    border-radius:                  0px;
-    border-color:                  	@ac;
+element-icon {
+    background-color: rgba(0, 0, 0, 0%);
+    size: 1.0000em;
+    text-color: inherit;
+    cursor: inherit;
+}
+window {
+    padding: 0;
+    border: 0;
+    background-color: var(background);
+}
+mainbox {
+    padding: 0;
+    border: 0;
+}
+message {
+    margin: 0px 7px;
+}
+textbox {
+    text-color: var(foreground);
+}
+listview {
+    margin: 0px 0px 5px;
+    scrollbar: true;
+    spacing: 2px;
+    fixed-height: 0;
+}
+scrollbar {
+    padding: 0;
+    handle-width: 14px;
+    border: 0;
+    handle-color: var(nord3);
+}
+button {
+    spacing: 0;
+    text-color: var(normal-foreground);
+    cursor: pointer;
+}
+button selected {
+    background-color: var(selected-normal-background);
+    text-color: var(selected-normal-foreground);
+}
+inputbar {
+    padding: 7px;
+    margin: 7px;
+    spacing: 0;
+    text-color: var(normal-foreground);
+    background-color: var(nord3);
+    children: [ entry ];
+}
+entry {
+    spacing: 0;
+    cursor: text;
+    text-color: var(normal-foreground);
+    background-color: var(nord3);
+    placeholder: "Search...";
 }
