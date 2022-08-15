@@ -10,9 +10,9 @@ bsp-layout set even 1
 bsp-layout set even 2
 bsp-layout set even 3
 
-bspc desktop -f ^1
+# bspc desktop -f ^1
 
-bspc rule -a whatsapp-nativefier-d40211 desktop=^1 follow=off
-bspc rule -a TelegramDesktop desktop=^1 follow=off
+# bspc rule -a whatsapp-nativefier-d40211 desktop=^1 follow=off
+# bspc rule -a TelegramDesktop desktop=^1 follow=off
 
 bspc desktop -f ^4

@@ -9,6 +9,7 @@ WALLPAPERS="$HOME"/wallpapers
 pgrep -x sxhkd > /dev/null || sxhkd &
 pgrep -x dunst > /dev/null || dunst &
 pgrep -x picom > /dev/null || picom &
+pgrep -x ntfd > /dev/null || ntfd &
 
 source $BSPWM_CONFIG/monitor-setup.sh
 source $POLYBAR_CONFIG/launch.sh
