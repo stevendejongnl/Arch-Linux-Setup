@@ -9,11 +9,11 @@
 
 # Show help
 super + shift + slash
-    sxhkd-help
+    $HOME/.config/sxhkd/help/sxhkd
 
 # Show help for pacman
 super + alt+ shift + slash
-    pacman-help
+    $HOME/.config/sxhkd/help/pacman
 
 # Reload sxhkd
 super + shift + r
