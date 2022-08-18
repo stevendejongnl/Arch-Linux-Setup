@@ -426,6 +426,10 @@
    appname = "changevolume"
    history_ignore = yes
 
+[jetbrainsclient-history-ignore]
+   appname = "JetBrainsClient"
+   history_ignore = yes
+
 #[skip-display]
 #    # This notification will not be displayed, but will be included in the history
 #    summary = "foobar"
