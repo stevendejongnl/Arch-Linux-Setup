@@ -1,6 +1,5 @@
-bspc config border_width         2
-bspc config border_radius        4
-bspc config window_gap           4
+bspc config border_width         1
+bspc config window_gap           8
 
 bspc config normal_border_color "#2E3440"
 bspc config focused_border_color "#D8DEE9"
