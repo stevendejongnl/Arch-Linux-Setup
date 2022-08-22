@@ -4,12 +4,14 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 BSPWM_CONFIG=$HOME/.config/bspwm
 POLYBAR_CONFIG=$HOME/.config/polybar
-WALLPAPERS="$HOME"/wallpapers
+WALLPAPERS=$HOME/wallpapers
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 pgrep -x dunst > /dev/null || dunst &
-pgrep -x picom > /dev/null || picom -b
+pgrep -x picom > /dev/null || picom &
 pgrep -x ntfd > /dev/null || ntfd &
+
+bspc config pointer_motion_interval 40
 
 source $BSPWM_CONFIG/monitor-setup.sh
 source $POLYBAR_CONFIG/launch.sh

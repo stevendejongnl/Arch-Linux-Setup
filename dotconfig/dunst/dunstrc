@@ -426,11 +426,15 @@
    appname = "changevolume"
    history_ignore = yes
 
+[pycharm-history-ignore]
+    appname = "pycharm"
+    history_ignore = yes
+
 [jetbrainsclient-history-ignore]
     appname = "JetBrainsClient"
     history_ignore = yes
 
-[jetbrainsclient-history-ignore]
+[codewithmeguest-history-ignore]
     appname = "CodeWithMeGuest"
     history_ignore = yes
 

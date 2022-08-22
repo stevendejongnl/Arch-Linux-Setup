@@ -41,6 +41,7 @@ done
 
 source "$DIR/setup/rsync.sh"
 
+source "$DIR/setup/dotfiles.sh"
 source "$DIR/setup/bspwm.sh"
 source "$DIR/setup/sxhkd.sh"
 source "$DIR/setup/polybar.sh"

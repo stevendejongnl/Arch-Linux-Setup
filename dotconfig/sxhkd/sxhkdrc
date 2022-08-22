@@ -51,9 +51,6 @@ XF86AudioMute
 #############################
 #       bspwm hotkeys       #
 #############################
-#
-# bspwm hotkeys
-#
 
 # quit/restart bspwm
 super + alt + {q,r}
@@ -173,3 +170,7 @@ super + {Left,Down,Up,Right}
 #    dir={west,south,north,east}; \
 #    bspc node -s "$dir.local" --follow \
 #        || bspc node -m "$dir" --follow
+
+# Change Wallpaper
+super + alt + w
+    RANDOM_WALLPAPER=$(find $HOME/wallpapers/* -xtype f | shuf -n 1) && feh --bg-fill "$RANDOM_WALLPAPER"
