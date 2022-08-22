@@ -8,8 +8,8 @@ install () {
 if [ -n "$INSTALL_ALL" ]; then
     install
 else
-    read -r -p "Install autorandr config [y/N] " autorandr_config
-    if [[ "$autorandr_config" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+    read -r -p "Install autorandr config [y/N] " install_question
+    if [[ "$install_question" =~ ^([yY][eE][sS]|[yY])$ ]]; then
         install
     fi
 fi

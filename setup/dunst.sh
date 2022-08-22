@@ -8,8 +8,8 @@ install () {
 if [ -n "$INSTALL_ALL" ]; then
     install
 else
-    read -r -p "Install dunst config [y/N] " dunst_config
-    if [[ "$dunst_config" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+    read -r -p "Install dunst config [y/N] " install_question
+    if [[ "$install_question" =~ ^([yY][eE][sS]|[yY])$ ]]; then
         install
     fi
 fi
