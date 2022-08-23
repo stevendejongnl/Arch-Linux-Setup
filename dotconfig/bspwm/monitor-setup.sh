@@ -1,26 +1,6 @@
 #!/bin/bash
 
-LG_HDMI='HDMI-1-1'
-AOC_HDMI='HDMI-1'
-AOC_DP='DP-1'
-
-if [[ $(xrandr -q | grep 'HDMI-1-2 connected') ]]; then
-	LG_HDMI='HDMI-1-2'
-fi
-if [[ $(xrandr -q | grep 'HDMI-2-2 connected') ]]; then
-	LG_HDMI='HDMI-2-2'
-fi
-
-if [[ $(xrandr -q | grep 'HDMI-2 connected') ]]; then
-	AOC_HDMI='HDMI-2'
-fi
-if [[ $(xrandr -q | grep 'HDMI-A-0 connected') ]]; then
-	AOC_HDMI='HDMI-A-0'
-fi
-
-if [[ $(xrandr -q | grep 'DisplayPort-0 connected') ]]; then
-	AOC_DP='DisplayPort-0'
-fi
+source $HOME/.config/bspwm/get-monitors.sh
 
 ## Set gpu and monitor
 xrandr --setprovideroutputsource 1 0
