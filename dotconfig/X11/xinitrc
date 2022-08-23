@@ -1,5 +1,8 @@
 xrdb $HOME/.config/X11/xresources
 
+# This rule is needed when no display manager is used (Removed sddm and use startx instead)
+dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
+
 pgrep -x sxhkd > /dev/null || sxhkd &
 pgrep -x dunst > /dev/null || dunst &
 pgrep -x picom > /dev/null || picom &
