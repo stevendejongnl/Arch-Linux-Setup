@@ -2,13 +2,21 @@ https://wiki.archlinux.org/title/installation_guide
 https://www.youtube.com/watch?v=a8IJ-keZcq0&ab_channel=BrentWestbrook
 https://www.debugpoint.com/gnome-arch-linux-install/
 
-# Java Application issues
+# Java Application issues (JetBrains)
 https://www.reddit.com/r/bspwm/comments/ozcd9c/pycharm_screen_without_content/
 
 Add Java non reparanting in `/etc/profile.d/jre.sh`
 ```bash
 export _JAVA_AWT_WM_NONREPARENTING=1
 ``` 
+
+# Screen tearing/slow performance issues
+https://bbs.archlinux.org/viewtopic.php?id=268873
+
+amd drivers
+```bash
+sudo pacman -S xf86-video-amdgpu
+```
 
 # Installation
 

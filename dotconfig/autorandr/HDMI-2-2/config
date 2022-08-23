@@ -1,8 +1,8 @@
-output VGA-1-2
+output VGA-2-2
 off
-output DVI-I-1-2
+output DVI-I-2-2
 off
-output HDMI-1-2
+output HDMI-2-2
 crtc 4
 mode 2048x864_60.00
 pos 0x0
@@ -13,7 +13,7 @@ x-prop-scaling_mode None
 x-prop-underscan off
 x-prop-underscan_hborder 0
 x-prop-underscan_vborder 0
-output HDMI-1
+output HDMI-A-0
 crtc 0
 mode 1920x1080
 pos 0x864
@@ -25,7 +25,7 @@ x-prop-scaling_mode None
 x-prop-underscan off
 x-prop-underscan_hborder 0
 x-prop-underscan_vborder 0
-output DP-1
+output DisplayPort-0
 crtc 1
 mode 1920x1080
 pos 1920x864
