@@ -34,7 +34,7 @@ super + alt + @space
 
 # program launcher
 super + @space
-    rofi -show drun
+    rofi -show drun -run-command "$HOME/.config/sxhkd/run-as-sudo \{cmd\}"
 
 
 #############################

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+sudoapps='grub-customizer'
+app=$1
+
+if [[ " $sudoapps " =~ .*\ $app\ .* ]]; then
+    gksudo $app
+else
+    $app
+fi
