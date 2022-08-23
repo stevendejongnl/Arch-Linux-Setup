@@ -1,7 +1,5 @@
 xrdb $HOME/.config/X11/xresources
 
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-
 pgrep -x sxhkd > /dev/null || sxhkd &
 pgrep -x dunst > /dev/null || dunst &
 pgrep -x picom > /dev/null || picom &
@@ -9,6 +7,6 @@ pgrep -x ntfd > /dev/null || ntfd &
 
 # activate screen locker
 xset s 300 20
-xss-lock -n /usr/lib/xsecurelock/dimmer -l -- env XSECURELOCK_COMPOSITE_OBSCURER=0 env XSECURELOCK_SAVER=saver_blank xsecurelock &
+xss-lock -n /usr/lib/xsecurelock/dimmer -l -- env XSECURELOCK_NO_COMPOSITE=1 env XSECURELOCK_SAVER=saver_blank xsecurelock &
 
 exec bspwm

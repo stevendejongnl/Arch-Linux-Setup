@@ -1,3 +1,5 @@
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
 if [[ "$(tty)" = "/dev/tty1" ]]; then
   pgrep bspwm || startx "$HOME/.config/X11/xinitrc"
 fi
