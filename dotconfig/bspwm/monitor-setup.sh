@@ -1,7 +1,5 @@
 #!/bin/bash
 
-source $HOME/.config/bspwm/get-monitors.sh
-
 ## Set gpu and monitor
 xrandr --setprovideroutputsource 1 0
 
@@ -11,9 +9,6 @@ xrandr --newmode "2048x864_60.00"  145.25  2048 2168 2376 2704  864 867 877 897 
 xrandr --addmode $LG_HDMI 2048x864_60.00
 
 autorandr --load $LG_HDMI
-
-# xrandr --output $HDMIONE --mode 1920x1080 --rate 144
-# xrandr --output $DISPLAYPORT --mode 1920x1080 --rate 144
 
 sleep 3
 

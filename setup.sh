@@ -41,6 +41,7 @@ done
 
 source "$DIR/setup/rsync.sh"
 
+# source "$DIR/setup/etc.sh"
 source "$DIR/setup/dotfiles.sh"
 source "$DIR/setup/X11.sh"
 source "$DIR/setup/bspwm.sh"

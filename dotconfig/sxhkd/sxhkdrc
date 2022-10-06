@@ -30,11 +30,13 @@ super + Return
 
 # open programs
 super + alt + @space
-    rofi -show window
+    rofi -monitor -1 -show window
+    #rofi -monitor $AOC_HDMI -show window
 
 # program launcher
 super + @space
-    rofi -show drun -run-command "$HOME/.config/sxhkd/run-as-sudo \{cmd\}"
+    rofi -monitor -1 -show drun -run-command "$HOME/.config/sxhkd/run-as-sudo \{cmd\}"
+    #rofi -monitor $AOC_HDMI -show drun -run-command "$HOME/.config/sxhkd/run-as-sudo \{cmd\}"
 
 
 #############################

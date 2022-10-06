@@ -33,3 +33,7 @@ fi
 if [[ $(xrandr -q | grep 'DisplayPort-1 connected') ]]; then
 	AOC_DP='DisplayPort-1'
 fi
+
+export LG_HDMI
+export AOC_HDMI
+export AOC_DP
