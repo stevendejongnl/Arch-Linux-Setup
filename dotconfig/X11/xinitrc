@@ -12,4 +12,7 @@ pgrep -x ntfd > /dev/null || ntfd &
 xset s 300 20
 xss-lock -n /usr/lib/xsecurelock/dimmer -l -- env XSECURELOCK_NO_COMPOSITE=1 env XSECURELOCK_SAVER=saver_blank xsecurelock &
 
+# https://www.reddit.com/r/bspwm/comments/kf7077/no_cursor_on_startup_appears_when_opening_a/
+xsetroot -cursor_name left_ptr
+
 exec bspwm
