@@ -9,9 +9,9 @@ pgrep -x picom > /dev/null || picom &
 pgrep -x ntfd > /dev/null || ntfd &
 
 # activate screen locker
-$HOME/.config/xsecurelock/blurred-background.sh
+
 xset s 300 20
-xss-lock -n /usr/lib/xsecurelock/dimmer -l -- env XSECURELOCK_NO_COMPOSITE=1 xsecurelock &
+xss-lock -n /usr/lib/xsecurelock/dimmer -l -- $HOME/.config/xsecurelock/blurred-background.sh &
 
 # https://www.reddit.com/r/bspwm/comments/kf7077/no_cursor_on_startup_appears_when_opening_a/
 xsetroot -cursor_name left_ptr
