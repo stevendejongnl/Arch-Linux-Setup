@@ -16,4 +16,7 @@ xss-lock -n /usr/lib/xsecurelock/dimmer -l -- env XSECURELOCK_NO_COMPOSITE=1 xse
 # https://www.reddit.com/r/bspwm/comments/kf7077/no_cursor_on_startup_appears_when_opening_a/
 xsetroot -cursor_name left_ptr
 
+# Background color
+xsetroot -solid "#3B4252"
+
 exec bspwm
