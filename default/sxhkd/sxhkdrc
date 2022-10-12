@@ -10,6 +10,10 @@ super + Return
 super + alt + @space
     rofi -monitor -1 -show window
 
+# program launcher
+super + @space
+    rofi -monitor -1 -show drun
+
 # quit/restart bspwm
 super + alt + {q,r}
     bspc {quit,wm -r}
