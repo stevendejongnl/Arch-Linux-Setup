@@ -52,5 +52,5 @@ rsync -av --progress "$DIR/default/zsh/zshrc" "$HOME/.zshrc"
 
 # Change Shell to zsh
 USER=${USER:-$(id -u -n)}
-sudo -k chsh -s "zsh" "$USER"
-export SHELL="zsh"
+ZSH=$(which zsh)
+sudo -k chsh -s "$ZSH" "$USER"
