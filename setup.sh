@@ -37,7 +37,7 @@ done
 source "$DIR/setup/rsync.sh"
 
 if [ -n "$DEFAULT" ]; then
-    pacman -S git base-devel polybar rofi kitty breeze adwaita-icon-theme papirus-icon-theme dunst xss-lock xsecurelock
+    pacman -S git base-devel xorg xorg-xinit bspwm sxhkd zsh polybar rofi kitty breeze adwaita-icon-theme papirus-icon-theme dunst xss-lock xsecurelock
 
     git clone https://aur.archlinux.org/yay.git
     cd yay
