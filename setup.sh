@@ -37,23 +37,7 @@ done
 source "$DIR/setup/rsync.sh"
 
 if [ -n "$DEFAULT" ]; then
-    pacman -S git base-devel xorg xorg-xinit bspwm sxhkd zsh polybar rofi kitty breeze adwaita-icon-theme papirus-icon-theme dunst xss-lock xsecurelock
-
-    git clone https://aur.archlinux.org/yay.git
-    cd yay
-    makepkg -si
-
-    cd $DIR
-
-    yay -S ntfd-bin nordic-theme
-
-    rsync -av --progress "$DIR/dotfiles/zprofile" "$HOME/.zprofile"
-
-    mkdir -p $HOME/.config/X11
-    rsync -av --progress "$DIR/dotconfig/X11/" "$HOME/.config/X11/"
-
-    install -Dm755 ./default/bspwm/bspwmrc ~/.config/bspwm/bspwmrc
-    install -Dm644 ./default/sxhkd/sxhkdrc ~/.config/sxhkd/sxhkdrc
+    source "$DIR/default/install.sh"
 else
     source "$DIR/setup/etc.sh"
     source "$DIR/setup/dotfiles.sh"
