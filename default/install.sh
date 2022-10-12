@@ -42,7 +42,7 @@ install -Dm755 ./default/bspwm/bspwmrc ~/.config/bspwm/bspwmrc
 install -Dm644 ./default/sxhkd/sxhkdrc ~/.config/sxhkd/sxhkdrc
 
 # Install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
 
 # Install zplug
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
@@ -50,3 +50,7 @@ curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/instal
 # copy default zshrc
 rsync -av --progress "$DIR/default/zsh/zshrc" "$HOME/.zshrc"
 
+# Change Shell to zsh
+USER=${USER:-$(id -u -n)}
+sudo -k chsh -s "zsh" "$USER"
+export SHELL="zsh"
