@@ -31,11 +31,11 @@ yay -S \
     nordic-theme
 
 # Copy default zprofile
-rsync -av --progress "$DIR/dotfiles/zprofile" "$HOME/.zprofile"
+rsync -av --progress "$DIR/default/dotfiles/zprofile" "$HOME/.zprofile"
 
 # Copy X11 config
 mkdir -p $HOME/.config/X11
-rsync -av --progress "$DIR/dotconfig/X11/" "$HOME/.config/X11/"
+rsync -av --progress "$DIR/default/dotconfig/X11/" "$HOME/.config/X11/"
 
 # Install default bspwm and sxhkd config
 install -Dm755 ./default/bspwm/bspwmrc ~/.config/bspwm/bspwmrc
@@ -48,7 +48,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 
 # copy default zshrc
-rsync -av --progress "$DIR/default/zsh/zshrc" "$HOME/.zshrc"
+rsync -av --progress "$DIR/default/dotfiles/zshrc" "$HOME/.zshrc"
 
 # Change Shell to zsh
 USER=${USER:-$(id -u -n)}
