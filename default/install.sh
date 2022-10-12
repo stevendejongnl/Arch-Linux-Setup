@@ -1,6 +1,7 @@
-# Install packages
+source "$DIR/setup/rsync.sh"
 
-pacman -S \
+# Install packages
+sudo pacman -S \
     vim \
     git \
     base-devel \
