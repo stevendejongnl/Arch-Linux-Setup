@@ -1,4 +1,25 @@
-bash
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zshrc
+
+ZSH_THEME="robbyrussell"
+
+eval "$(direnv hook zsh)"
+
+plugins=(
+  direnv
+  git
+  docker
+  history-substring-search
+  zsh-completions
+  zsh-syntax-highlighting
+  zsh-autosuggestions
+  autoupdate
+)
+
+source $ZSH/oh-my-zsh.sh
+
 if [[ ! -d ~/.zplug ]];then
   git clone https://github.com/zplug/zplug ~/.zplug
 fi
@@ -18,5 +39,5 @@ if ! zplug check --verbose; then
         echo; zplug install
     fi
 fi
-#zplug load --verbose
+
 zplug load
