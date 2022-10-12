@@ -1,6 +1,7 @@
 # Install packages
 
 pacman -S \
+    vim \
     git \
     base-devel \
     xorg xorg-xinit \
@@ -10,6 +11,7 @@ pacman -S \
     xss-lock xsecurelock \
     zsh \
     kitty \
+    direnv \
     breeze adwaita-icon-theme papirus-icon-theme \
     noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
 
@@ -45,3 +47,4 @@ curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/instal
 
 # copy default zshrc
 rsync -av --progress "$DIR/default/zsh/zshrc" "$HOME/.zshrc"
+
