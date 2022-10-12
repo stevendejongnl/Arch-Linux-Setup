@@ -35,7 +35,7 @@ rsync -av --progress "$DIR/default/dotfiles/zprofile" "$HOME/.zprofile"
 
 # Copy X11 config
 mkdir -p $HOME/.config/X11
-rsync -av --progress "$DIR/default/dotconfig/X11/" "$HOME/.config/X11/"
+rsync -av --progress "$DIR/default/X11/" "$HOME/.config/X11/"
 
 # Install default bspwm and sxhkd config
 install -Dm755 ./default/bspwm/bspwmrc ~/.config/bspwm/bspwmrc
