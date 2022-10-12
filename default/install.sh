@@ -25,6 +25,7 @@ cd $DIR
 
 # Install yay packages
 yay -S \
+    google-chrome \
     ntfd-bin \
     nordic-theme
 
