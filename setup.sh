@@ -47,7 +47,7 @@ if [ -n "$DEFAULT" ]; then
 
     yay -S ntfd-bin nordic-theme
 
-    rsync -av --progress "$DIR/dotfiles/zprofile/" "$HOME/.zprofile"
+    rsync -av --progress "$DIR/dotfiles/zprofile" "$HOME/.zprofile"
 
     mkdir -p $HOME/.config/X11
     rsync -av --progress "$DIR/dotconfig/X11/" "$HOME/.config/X11/"
