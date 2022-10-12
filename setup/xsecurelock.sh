@@ -1,7 +1,7 @@
 #! /bin/sh
 
 install () {
-    mkdir -p $HOME/.config/dunst
+    mkdir -p $HOME/.config/xsecurelock
     rsync -av --progress "$DIR/dotconfig/xsecurelock/" "$HOME/.config/xsecurelock/"
 }
 
