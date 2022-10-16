@@ -11,7 +11,7 @@ export XSECURELOCK_IMAGE_DURATION_SECONDS=3600
 if [ -z ${LOCKSCREEN_DIR+x} ]; then exit 1; fi # bail if lockscreen dir is not set
 
 /usr/bin/rm -f ${LOCKSCREEN_DIR}/lockscreen-plain.png
-flameshot screen --path ${LOCKSCREEN_DIR}/lockscreen-plain.png && 
+flameshot screen --number 2 --path ${LOCKSCREEN_DIR}/lockscreen-plain.png && 
 convert ${LOCKSCREEN_DIR}/lockscreen-plain.png -blur $BLURTYPE ${LOCKSCREEN_DIR}/lockscreen-blurred.png &&
 mv ${LOCKSCREEN_DIR}/lockscreen-blurred.png ${LOCKSCREEN_DIR}/lockscreen/lockscreen.png &
 xsecurelock &&
