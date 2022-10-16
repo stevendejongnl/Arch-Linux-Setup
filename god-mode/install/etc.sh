@@ -2,14 +2,11 @@
 
 install () {
     # sudo rsync -av --progress "$DIR/etc/profile.d/" "/etc/profile.d/"
-    sudo rsync -av --progress "$DIR/etc/pacman.d/" "/etc/pacman.d/"
+    sudo rsync -av --progress "$DIR/god-mode/etc/pacman.d/" "/etc/pacman.d/"
 }
 
-if [ -n "$INSTALL_ALL" ]; then
-    install
-else
-    read -r -p "Install etc files [y/N] " install_question
-    if [[ "$install_question" =~ ^([yY][eE][sS]|[yY])$ ]]; then
-        install
-    fi
+read -r -p "Install etc files [Y/n] " install_question
+if [[ "$install_question" =~ ^([nN][oO]|[nN])$ ]]; then
+    return 
 fi
+install

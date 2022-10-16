@@ -5,11 +5,8 @@ install () {
     rsync -av --progress "$DIR/god-mode/dotconfig/polybar/" "$HOME/.config/polybar/"
 }
 
-if [ -n "$INSTALL_ALL" ]; then
-    install
-else
-    read -r -p "Install polybar config [y/N] " install_question
-    if [[ "$install_question" =~ ^([yY][eE][sS]|[yY])$ ]]; then
-        install
-    fi
+read -r -p "Install polybar config [Y/n] " install_question
+if [[ "$install_question" =~ ^([nN][oO]|[nN])$ ]]; then
+    return 
 fi
+install

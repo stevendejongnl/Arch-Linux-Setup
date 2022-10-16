@@ -2,14 +2,11 @@
 
 install () {
     rsync -av --progress "$DIR/god-mode/dotfiles/zprofile" "$HOME/.zprofile"
-    rsync -av --progress "$DIR/god-mode/dotfiles/zshrc/" "$HOME/.zshrc"
+    rsync -av --progress "$DIR/god-mode/dotfiles/zshrc" "$HOME/.zshrc"
 }
 
-if [ -n "$INSTALL_ALL" ]; then
-    install
-else
-    read -r -p "Install kitty config [y/N] " install_question
-    if [[ "$install_question" =~ ^([yY][eE][sS]|[yY])$ ]]; then
-        install
-    fi
+read -r -p "Install dotfiles config [Y/n] " install_question
+if [[ "$install_question" =~ ^([nN][oO]|[nN])$ ]]; then
+    return 
 fi
+install
