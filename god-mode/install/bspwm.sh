@@ -2,7 +2,7 @@
 
 install () {
     mkdir -p $HOME/.config/bspwm
-    rsync -av --progress "$DIR/dotconfig/bspwm/" "$HOME/.config/bspwm/"
+    rsync -av --progress "$DIR/god-mode/dotconfig/bspwm/" "$HOME/.config/bspwm/"
     chmod +x "$HOME/.config/bspwm/bspwmrc"
     chmod +x "$HOME/.config/bspwm/monitor-setup.sh"
     chmod +x "$HOME/.config/bspwm/rules.sh"

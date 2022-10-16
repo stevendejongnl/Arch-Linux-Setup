@@ -2,7 +2,7 @@
 
 install () {
     mkdir -p $HOME/.config/sxhkd
-    rsync -av --progress "$DIR/dotconfig/sxhkd/" "$HOME/.config/sxhkd/"
+    rsync -av --progress "$DIR/god-mode/dotconfig/sxhkd/" "$HOME/.config/sxhkd/"
 }
 
 if [ -n "$INSTALL_ALL" ]; then

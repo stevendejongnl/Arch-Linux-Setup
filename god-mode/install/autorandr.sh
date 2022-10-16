@@ -2,7 +2,7 @@
 
 install () {
     mkdir -p $HOME/.config/autorandr
-    rsync -av --progress "$DIR/dotconfig/autorandr/" "$HOME/.config/autorandr/"
+    rsync -av --progress "$DIR/god-mode/dotconfig/autorandr/" "$HOME/.config/autorandr/"
 }
 
 if [ -n "$INSTALL_ALL" ]; then

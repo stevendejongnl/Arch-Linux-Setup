@@ -6,7 +6,7 @@ WALLPAPERS=$HOME/wallpapers
 
 bspc config pointer_motion_interval 40
 
-source $HOME/arch-linux-setup/etc/profile.d/monitors.sh
+source $HOME/arch-linux-setup/god-mode/etc/profile.d/monitors.sh
 source $BSPWM_CONFIG/monitor-setup.sh
 source $POLYBAR_CONFIG/launch.sh
 source $BSPWM_CONFIG/rules.sh

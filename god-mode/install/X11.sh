@@ -2,7 +2,7 @@
 
 install () {
     mkdir -p $HOME/.config/X11
-    rsync -av --progress "$DIR/dotconfig/X11/" "$HOME/.config/X11/"
+    rsync -av --progress "$DIR/god-mode/dotconfig/X11/" "$HOME/.config/X11/"
 }
 
 if [ -n "$INSTALL_ALL" ]; then

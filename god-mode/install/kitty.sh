@@ -2,7 +2,7 @@
 
 install () {
     mkdir -p $HOME/.config/kitty
-    rsync -av --progress "$DIR/dotconfig/kitty/" "$HOME/.config/kitty/"
+    rsync -av --progress "$DIR/god-mode/dotconfig/kitty/" "$HOME/.config/kitty/"
 }
 
 if [ -n "$INSTALL_ALL" ]; then

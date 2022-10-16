@@ -1,8 +1,8 @@
 #! /bin/sh
 
 install () {
-    rsync -av --progress "$DIR/dotfiles/zprofile" "$HOME/.zprofile"
-    rsync -av --progress "$DIR/dotfiles/zshrc/" "$HOME/.zshrc"
+    rsync -av --progress "$DIR/god-mode/dotfiles/zprofile" "$HOME/.zprofile"
+    rsync -av --progress "$DIR/god-mode/dotfiles/zshrc/" "$HOME/.zshrc"
 }
 
 if [ -n "$INSTALL_ALL" ]; then

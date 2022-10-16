@@ -2,7 +2,7 @@
 
 install () {
     mkdir -p $HOME/.config/polybar
-    rsync -av --progress "$DIR/dotconfig/polybar/" "$HOME/.config/polybar/"
+    rsync -av --progress "$DIR/god-mode/dotconfig/polybar/" "$HOME/.config/polybar/"
 }
 
 if [ -n "$INSTALL_ALL" ]; then

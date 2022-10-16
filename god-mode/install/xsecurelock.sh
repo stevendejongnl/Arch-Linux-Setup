@@ -2,7 +2,7 @@
 
 install () {
     mkdir -p $HOME/.config/xsecurelock
-    rsync -av --progress "$DIR/dotconfig/xsecurelock/" "$HOME/.config/xsecurelock/"
+    rsync -av --progress "$DIR/god-mode/dotconfig/xsecurelock/" "$HOME/.config/xsecurelock/"
 }
 
 if [ -n "$INSTALL_ALL" ]; then

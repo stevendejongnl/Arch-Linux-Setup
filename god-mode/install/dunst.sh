@@ -2,7 +2,7 @@
 
 install () {
     mkdir -p $HOME/.config/dunst
-    rsync -av --progress "$DIR/dotconfig/dunst/" "$HOME/.config/dunst/"
+    rsync -av --progress "$DIR/god-mode/dotconfig/dunst/" "$HOME/.config/dunst/"
 }
 
 if [ -n "$INSTALL_ALL" ]; then
