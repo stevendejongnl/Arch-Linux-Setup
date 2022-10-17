@@ -1,10 +1,12 @@
 #!/bin/bash
 
-sudoapps='grub-customizer'
+sudoapps='grub-customizer /usr/bin/gparted'
 app=$1
 
 if [[ " $sudoapps " =~ .*\ $app\ .* ]]; then
+    # notify-send "Open $app with sudo"
     gksudo $app
 else
+    # notify-send "Open $app not with sudo"
     $app
 fi

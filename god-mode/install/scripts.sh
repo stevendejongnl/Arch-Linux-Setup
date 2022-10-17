@@ -8,6 +8,11 @@ install () {
     ln -sf "$HOME/.config/scripts/notifications-open-all" "$HOME/.local/bin/notifications-open-all"
 }
 
+if [ $ALLYES ]; then
+    install
+    return
+fi
+
 read -r -p "Install scripts [Y/n] " install_question
 if [[ "$install_question" =~ ^([nN][oO]|[nN])$ ]]; then
     return 

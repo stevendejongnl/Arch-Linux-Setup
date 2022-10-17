@@ -5,6 +5,11 @@ install () {
     rsync -av --progress "$DIR/default/X11/" "$HOME/.config/X11/"
 }
 
+if [ $ALLYES ]; then
+    install
+    return
+fi
+
 read -r -p "Install X11 config [Y/n] " install_question
 if [[ "$install_question" =~ ^([nN][oO]|[nN])$ ]]; then
     return 

@@ -31,6 +31,10 @@ while [[ $# -gt 0 ]]; do
             GODMODE="$1"
             shift
             ;;
+        -y|--yes)
+            ALLYES="$1"
+            shift
+            ;;
         -h|--help)
             help
             exit 1

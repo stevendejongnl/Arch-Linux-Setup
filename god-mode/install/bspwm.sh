@@ -9,6 +9,11 @@ install () {
     chmod +x "$HOME/.config/bspwm/styling.sh"
 }
 
+if [ $ALLYES ]; then
+    install
+    return
+fi
+
 read -r -p "Install bswpm config [Y/n] " install_question
 if [[ "$install_question" =~ ^([nN][oO]|[nN])$ ]]; then
     return 
